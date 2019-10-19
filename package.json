@@ -1,0 +1,25 @@
+{
+  "name": "utilspackage",
+  "version": "1.0.0",
+  "description": "Package providing utils for EVNotify services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EVNotify/UtilsPackage.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "author": "GPlay97",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/EVNotify/UtilsPackage/issues"
+  },
+  "homepage": "https://github.com/EVNotify/UtilsPackage#readme",
+  "dependencies": {
+    "mongoose": "^5.7.5"
+  }
+}
