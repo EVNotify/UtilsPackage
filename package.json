@@ -1,5 +1,5 @@
 {
-  "name": "utilspackage",
+  "name": "@evnotify/utils",
   "version": "1.0.0",
   "description": "Package providing utils for EVNotify services",
   "main": "index.js",
