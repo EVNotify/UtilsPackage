@@ -12,11 +12,9 @@ const connect = async () => {
     const mongoUrl = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
     const options = {
         autoIndex: true,
-        reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-        reconnectInterval: 500, // Reconnect every 500ms
         poolSize: 10, // Maintain up to 10 socket connections
-        // If not connected, return errors immediately rather than waiting for reconnect
         useNewUrlParser: true,
+        useUnifiedTopology: true,
         bufferMaxEntries: 0
     };
 
@@ -24,7 +22,7 @@ const connect = async () => {
         mongoose.connect(mongoUrl, options, (err) => {
             if (err) return reject();
             resolve();
-        })
+        });
     });
 };
 
@@ -42,7 +40,7 @@ process.on('SIGINT', () => {
     db.close(() => {
         console.warn('Force to close the MongoDB connection after SIGINT');
         process.exit(0);
-    })
+    });
 });
 
 module.exports = {
