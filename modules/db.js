@@ -9,7 +9,7 @@ const db = mongoose.connection;
 const getDB = () => db;
 
 const connect = async () => {
-    const mongoUrl = `mongodb${process.env.DB_SCHEME_SUFFIX ? `+${process.env.DB_SCHEME_SUFFIX}` : ''}://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}${process.env.DB_PORT ? `:${process.env.DB_PORT}` : ''}`;
+    const mongoUrl = `mongodb${process.env.DB_SCHEME_SUFFIX ? `+${process.env.DB_SCHEME_SUFFIX}` : ''}://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}${process.env.DB_PORT ? `:${process.env.DB_PORT}` : ''}/${process.env.DB_NAME}`;
     const options = {
         autoIndex: true,
         poolSize: 10, // Maintain up to 10 socket connections
